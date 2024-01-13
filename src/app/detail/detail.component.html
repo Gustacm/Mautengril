@@ -1,0 +1,14 @@
+<app-navbar/>
+<h3> {{name}}</h3>
+ <img class="card-img-top" src="{{data.imagen}}" alt="Card image cap">
+ <p class="card-text">{{data.ingredients.join(', ')}}</p>
+ <small class="text-muted"> CLP {{data.price}}</small>
+
+ <br>
+
+ <h5>Cantidad: {{contador}}</h5>
+ 
+ <button  (click)="Decrementar()" type="button" class="btn btn-primary">-</button>
+ <button (click)="incrementar()" type="button" class="btn  btn-primary">+</button>
+ <button (click)="agregar()" type="button" class="btn btn-primary">Agregar</button>
+

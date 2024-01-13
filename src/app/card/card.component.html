@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-3" *ngFor="let item of data">
+      <a (click)="navigateToDetail(item)" >
+        <div class="card">
+          <img class="card-img-top" src="{{item.imagen[0]}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.ingredients.join(', ')}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"> CLP {{item.price}}</small>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  
+
