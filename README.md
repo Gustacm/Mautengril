@@ -1,27 +1,41 @@
 # MauntenGril
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+MauntenGril es un proyecto de aplicación web construido con Angular 17 y TypeScript, diseñado para ofrecer una solución funcional para pequeños locales de comida rápida. Este proyecto utiliza Bootstrap para la interfaz de usuario y está en constante evolución para proporcionar funcionalidades mejoradas en futuras versiones.
 
-## Development server
+## Visión General
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La visión de MauntenGril es proporcionar una solución práctica y eficiente para la gestión de pedidos y operaciones en locales de comida rápida. A medida que el proyecto evoluciona, se planea agregar características más completas y mejoras para satisfacer las necesidades cambiantes del negocio.
 
-## Code scaffolding
+## Características Actuales
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Interfaz Intuitiva:** Diseño fácil de usar para agilizar la toma de pedidos y la gestión de menús.
+- **Funcionalidades Básicas:** Registro de pedidos, gestión de inventario y seguimiento de ventas.
 
-## Build
+## Tecnologías Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular 17:** Framework de desarrollo web.
+- **TypeScript:** Superset de JavaScript que agrega tipado estático.
+- **Bootstrap:** Framework de diseño para una interfaz de usuario moderna y receptiva.
 
-## Running unit tests
+## Instalación
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clona el repositorio: `git clone https://github.com/tu-usuario/MauntenGril.git`
+2. Instala las dependencias: `npm install`
+3. Inicia la aplicación: `ng serve`
 
-## Running end-to-end tests
+## Contribución
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Si deseas contribuir al proyecto, por favor sigue los pasos:
 
-## Further help
+1. Abre un problema para discutir las mejoras propuestas o problemas encontrados.
+2. Crea un fork del proyecto y trabaja en una rama separada.
+3. Envía una solicitud de extracción con tus cambios.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Futuras Mejoras
+
+- **Ampliación de Funcionalidades:** Agregar características avanzadas como gestión de empleados, análisis de datos y más.
+- **Mejoras de Interfaz:** Continuar mejorando la experiencia del usuario.
+
+## Licencia
+
+Este proyecto está bajo la licencia [MIT](LICENSE).
