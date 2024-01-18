@@ -1,8 +1,102 @@
 
+<app-navbar/>
 <div>
-  <h3>holiss</h3>
-  <div *ngIf="carrito">
-    <h3>Carrito</h3>
-    <p>{{ carrito.Titulo }} - Cantidad: {{ carrito.Catidad }}</p>
+  <h3>Carrito</h3>
+
+  @if (!carrito[0]) {
+    <h3>No hay nada en carrito !!</h3>
+  }
+
+  @for (i of carrito; track $index) {
+
+    <li>{{ carrito[$index].Cantidad}} {{ carrito[$index].Titulo}} -
+       Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>      
+  }
+
+  @if (carrito[0]) {
+    <h3>Total: {{ formatearComoDinero(total()) }}</h3>
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">pedir</a>
+  }
+
+
+
+
+</div>
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <!-- primermodal  -->
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Pedidos Mauten Gril</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        @for (i of carrito; track $index) {
+
+          <li>{{ carrito[$index].Cantidad}} {{ carrito[$index].Titulo}} -
+             Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>      
+        }
+          <h3>Total: {{ formatearComoDinero(total()) }}</h3>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Tu nombre:</label>
+            <input type="text" class="form-control" id="nombre" (change)="validacion($event.target)">
+  
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Direccion:</label>
+            <input type="text" class="form-control" id="nombre" (change)="setdireccion($event.target)" >
+  
+          </div>
+      </div>
+      <div class="modal-footer">
+        @if (enviar==true) {
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Seguir</button>
+        }@else {
+          <h5> Nombre no válido</h5>
+        }
+      </div>
+    </div>
   </div>
 </div>
+
+
+<!-- segundo modal -->
+
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title" (change)="formaPago($event.target)"> Forma De Pago</h5>
+        <select (change)="formaPago($event.target)" class="form-select">
+          <option value="Efectivo" >Efectivo</option>
+          <option value="Transferencia">Transferencia </option>
+        </select>
+        @if (fPago=="Transferencia") {
+          <h1 class="modal-title fs-9" >Datos de la yoni</h1>
+          <h6 class="modal-title fs-20" >Datos de la yoni</h6>
+        }     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">desaser</button>
+        @if (enviar==true) {
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Atras</button>
+          <button type="button" class="btn btn-primary" (click)="sed()"  >predir..!!</button>
+        }@else {
+          <h5> Nombre no válido</h5>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+

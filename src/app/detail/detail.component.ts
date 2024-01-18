@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CarritoService } from '../carrito.service';
-
+import { CarritoComponent } from '../carrito/carrito.component';
 
 
 @Component({
@@ -15,30 +15,18 @@ import { CarritoService } from '../carrito.service';
 export class DetailComponent implements OnInit {
   public name: any;
   public data: any;
-  contador:number=1;
-  producto:object={}
-  carrito:any;
-  
-  
-  constructor(
-    private route: ActivatedRoute,
-    private carritoService: CarritoService
-    
-    ) { }
+  contador: number = 1;
+  producto: any = {};
 
-  
-  
-  
-  
-  
-  
+  constructor(private route: ActivatedRoute, private carritoService: CarritoService) {}
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.name = params.get('name');
-      this.data = history.state.data; 
+      this.data = history.state.data;
     });
-    
-}
+  }
+
 // contador
 incrementar(){
   this.contador+=1;
@@ -58,18 +46,10 @@ Decrementar(){
 }
 
 //agregar al  carrito
-
-agregar(){
-  
-  this.producto={"Titulo":this.name, "Catidad":this.contador};
-  console.log("enviado al carrito",this.producto);
-  this.carritoService.agregarAlCarrito(this.producto);
-  this.contador= 1
-}
-
-    
-    
-    
+agregar() {
+  const producto = { "Titulo": this.name, "Cantidad": this.contador,"precio":this.data.price*this.contador };
+  this.carritoService.agregarAlCarrito(producto);
+  this.contador = 1;
   
 }
-
+}

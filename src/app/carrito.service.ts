@@ -1,15 +1,36 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
-  private carritoSubject = new BehaviorSubject<any>(null);
-  carrito$ = this.carritoSubject.asObservable();
+  initialState = [
+
+  ];
+  private carritoState = new BehaviorSubject<any>([...this.initialState]);
+
+  getState(): Observable<any[]> {
+    return this.carritoState.asObservable();
+  }
 
   agregarAlCarrito(producto: any) {
-    console.log('Agregando al carrito:', producto);
-    this.carritoSubject.next(producto);
+    const carritoActual = this.carritoState.value;
+
+    // si  exite sobre escribe  el  que  existe
+    const productoExistenteIndex = carritoActual.findIndex((p:any) => p.Titulo === producto.Titulo);
+    if (productoExistenteIndex !== -1) {
+      carritoActual[productoExistenteIndex] = producto;
+    } else {
+      carritoActual.push(producto);
+    }
+  
+    // Actualiza el estado del carrito
+    this.carritoState.next([...carritoActual]);
   }
+  
 }
+
+// El  metodo  findIndex lo  utilizo  aqui para buscar  el elemento 
+// especifo en el  array , cuando  consige  lo  que  busca  se  para  
+// la  busqueda 
