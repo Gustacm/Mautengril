@@ -1,36 +1,15 @@
 
-<app-navbar/>
-<div>
-  <h3>Carrito</h3>
-
-  @if (!carrito[0]) {
-    <h3>No hay nada en carrito !!</h3>
-  }
-
-  @for (i of carrito; track $index) {
-
-    <li>{{ carrito[$index].Cantidad}} {{ carrito[$index].Titulo}} -
-       Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>      
-  }
-
-  @if (carrito[0]) {
-    <h3>Total: {{ formatearComoDinero(total()) }}</h3>
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">pedir</a>
-  }
 
 
-
-
-</div>
-
-
-
+    
+    
 <!-- Modal -->
 
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
+
 
         <!-- primermodal  -->
         <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Pedidos Mauten Gril</h1>
@@ -49,11 +28,21 @@
             <input type="text" class="form-control" id="nombre" (change)="validacion($event.target)">
   
           </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Direccion:</label>
-            <input type="text" class="form-control" id="nombre" (change)="setdireccion($event.target)" >
-  
-          </div>
+          <h5 class="modal-title" > Direccion:</h5>
+          <select (change)="setdireccion($event.target)" class="form-select">
+
+            <option  value="Delivery">Delivery</option>
+            <option  value="local">local</option>
+          </select>
+
+          @if (SWitch==true) {
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Direccion:</label>
+              <input type="text" class="form-control" id="nombre" (change)="setdireccion($event.target)" > 
+            </div>
+          }     
+
+
       </div>
       <div class="modal-footer">
         @if (enviar==true) {
@@ -83,8 +72,10 @@
           <option value="Transferencia">Transferencia </option>
         </select>
         @if (fPago=="Transferencia") {
-          <h1 class="modal-title fs-9" >Datos de la yoni</h1>
-          <h6 class="modal-title fs-20" >Datos de la yoni</h6>
+          <h1 class="modal-title fs-9" >Datos de Cuenta</h1>
+          <h6 class="modal-title fs-20" >Mautengril</h6>
+          <h6 class="modal-title fs-20" >Nº100000000000000000</h6>
+          <h6 class="modal-title fs-20" >Cuenta Corriente</h6>
         }     
       </div>
       <div class="modal-footer">
@@ -97,6 +88,36 @@
         }
       </div>
     </div>
+  </div>
+</div>
+
+
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Carrito</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+  @if (!carrito[0]) {
+    <h3>No hay nada en carrito !!</h3>
+  }
+
+  @for (i of carrito; track $index) {
+    
+    <li>{{ carrito[$index].Cantidad}} {{ carrito[$index].Titulo}} -
+      Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>      
+    }
+  
+    
+    @if (carrito[0]) {
+      <h3>Total: {{ formatearComoDinero(total()) }}</h3>
+      <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" (click)="dimmer()" role="button">pedir</a>
+    }
+    
+  </div>
   </div>
 </div>
 

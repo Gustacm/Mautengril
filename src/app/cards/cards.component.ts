@@ -18,12 +18,15 @@ import { CommonModule } from '@angular/common';
 export class CardsComponent {
 
   @Input()
-  dataCards:any="";
-  
+  dataMenu:any="";
 
- 
 
- 
 
-  
+  constructor() {
+
+
+
+  }
+
+
 }

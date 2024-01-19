@@ -19,15 +19,24 @@ export class CarritoComponent implements OnInit {
   enviar:boolean=false;
   totalp:any=0;
   fPago:string="";
+  SWitch:boolean=false;
 
   setdireccion(evento:any): void {
     const valor = evento.value;
-    if (!valor) {
-      this.enviar=false
+    console.log("valor",valor);
+    
+    if (valor=="local") {
+      this.SWitch=false;
+      this.direccion= "retiro en el  local"
+      console.log("direccion",this.direccion);
+      console.log("SWitch",this.SWitch);
     }else{
-      this.enviar=true
-      this.direccion= valor;
+      this.SWitch=true
+      this.direccion= "Mi direccion  es ", valor;
+      console.log("direccion",this.direccion);
+      console.log("SWitch",this.SWitch);
     }
+    
   }
  
   validacion(evento:any): void {
@@ -63,6 +72,15 @@ export class CarritoComponent implements OnInit {
    return total
   }
 
+  dimmer(){
+    if (this.SWitch==false) {
+      this.SWitch=true;
+    }else{
+      this.SWitch=false
+    }
+
+  }
+
   sed(): void {
     const productos = this.carrito.map(item => `- ${item.Titulo} Cantidad: ${item.Cantidad}`).join('\n');
 
@@ -83,7 +101,7 @@ export class CarritoComponent implements OnInit {
   constructor(private carritoService: CarritoService, private cdr: ChangeDetectorRef) {}
   ngOnInit(): void {
     this.carritoService.getState().subscribe((carrito) => {
-      console.log('Carrito recibido en CarritoComponent:', carrito);
+      // console.log('Carrito recibido en CarritoComponent:', carrito);
       this.carrito = carrito;
 
       // Forzar la detección de cambios

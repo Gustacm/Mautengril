@@ -1,16 +1,53 @@
-<app-navbar/>
+<app-navbar></app-navbar>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card" style="max-width: 400px;">
+    <img src="{{data.imagen}}" class="card-img-top" alt="...">
+    <div class="card-body text-center">
+      <h2 class="card-title">{{name}}</h2>
+      <p class="card-text">{{data.ingredients.join(', ')}}</p>
+      <p class="card-text"><small class="text-muted">CLP {{data.price}}</small></p>
+    </div>
+    
+    <div class="card-footer text-center">
+      <h5>Cantidad: {{contador}}</h5>
+      <div class="btn-group">
+        <button (click)="Decrementar()" type="button" class="btn btn-secondary">-</button>
+        <button (click)="incrementar()" type="button" class="btn btn-secondary">+</button>
+      </div>
+      <button (click)="agregar()" type="button" class="btn btn-primary">Agregar al Carrito</button>
+    </div>
+  </div>
+</div>
+
+<app-carrito></app-carrito>
+
+
+
+
+
+<!-- 
+
+
+
 <h3> {{name}}</h3>
  <img class="card-img-top" src="{{data.imagen}}" alt="Card image cap">
  <p class="card-text">{{data.ingredients.join(', ')}}</p>
  <small class="text-muted"> CLP {{data.price}}</small>
 
- <br>
-
- <h5>Cantidad: {{contador}}</h5>
- 
- <button  (click)="Decrementar()" type="button" class="btn btn-primary">-</button>
- <button (click)="incrementar()" type="button" class="btn  btn-primary">+</button>
- <button (click)="agregar()" type="button" class="btn btn-primary">Agregar</button>
-
+ <br> -->
 
  
+    
+ <app-carrito />
+<div class="position-fixed top-50 end-0 translate-middle-y">
+  <button type="button" class="btn btn-primary btn-lg position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    Carrito
+    @if (cuentaState) {
+      <span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+        {{cuentaState}}
+        <span class="visually-hidden">unread messages</span>
+      </span>
+    }
+  </button>
+</div>

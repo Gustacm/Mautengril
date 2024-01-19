@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { DetailComponent } from '../detail/detail.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DetailComponent],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']  
 })
@@ -14,10 +15,7 @@ export class CardComponent {
   @Input()
   data: any = "";
 
-  ngOnInit() {
 
-
-  }
 
   constructor(private router:Router){  }
 // Envio la info para el detail con  el  path

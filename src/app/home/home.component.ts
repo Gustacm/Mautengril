@@ -1,33 +1,51 @@
-import { Component } from '@angular/core';
-import { menu } from '../carta/Carta';
+import { Component, OnInit } from '@angular/core';
 import { CardsComponent } from '../cards/cards.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { CarritoComponent } from '../carrito/carrito.component';
+import { CartaService } from '../carta.service';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardsComponent,NavbarComponent],
+  imports: [CardsComponent, NavbarComponent, CarritoComponent,],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  dataMenu: any[] = [];
+  cuentaState: any = 0;
+  posicion: boolean = false;
 
-title = 'MauntenGril';
+  constructor(private cartaService: CartaService) {}
 
-  // resibir la data  del  menu
-  dataMenu:any =this.menuCategory(menu)
+  ngOnInit() {
+    // Suscríbete al estado de la carta cuando el componente se inicia
+    this.cartaService.getState().subscribe((estado) => {
+      // Procesa los datos según tus necesidades
+      this.dataMenu = this.menuCategory(estado);
+    });
+   
+    
+  }
 
-  //  ordenar la info  y  colocarla privado  
-private menuCategory(menudata:any[]):any[]{
-  return menudata.map(i=>{
-return{
-  iName:i.category,
-  iItems:i.items,
+  dimmer() {
+    this.posicion = !this.posicion;
+  }
+
+  title = 'MauntenGril';
+
+
+
+
+  // Obtener la data del menú al inicio
+  private menuCategory(menudata: any[]): any[] {
+    return menudata.map((category) => {
+      return {
+        iName: category.category,
+        iItems: category.items,
+      };
+    });
+  }
 }
 
-  })
-
-
-}
-
-}

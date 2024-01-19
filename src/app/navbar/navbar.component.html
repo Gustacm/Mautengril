@@ -1,23 +1,69 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 bg-opacity-75 fixed-top">
   <a class="navbar-brand" [routerLink]="['/']">El logo De vaina</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link text-warning" href="#Landing">Landing</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link text-warning" href="#SANGUCHES">SANGUCHES</a>
+    </li>
+    <li class="nav-item text-warning">
+      <a class="nav-link text-warning" href="#HAMBURGUESAS">HAMBURGUESAS</a>
+    </li>
+    <li class="nav-item text-warning">
+      <a class="nav-link text-warning" href="#FAJITAS">FAJITAS</a>
+    </li>
+
+
+
+    <li class="nav-item dropdown text-warning">
+    <a class="nav-link dropdown-toggle text-warning" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorías</a>
+      <ul class="dropdown-menu">
+        Landing
+         <li><a class="dropdown-item text-warning" href="#COMPLETOSYHOTDOG">COMPLETOS Y HOT DOG</a></li>
+         <li><a class="dropdown-item text-warning" href="#PEPITOS">PEPITOS</a></li>
+         <li><a class="dropdown-item text-warning" href="#COSTILLAS">COSTILLAS</a></li>
+         <li><a class="dropdown-item text-warning" href="#TEQUEÑOS">TEQUEÑOS</a></li>
+         <li><a class="dropdown-item text-warning" href="#EXTRAS">Extra</a></li>
+      </ul>
+   </li>
+    
+
+
+
+
+
+    <!-- @if (posicion==true) {
+      <li class="nav-item dropdown">
+        <div class="list-group">
+        <a class="list-group-item list-group-item-action"href="#COMPLETOS Y HOT DOG">COMPLETOS Y HOT DOG</a>
+        <a class="list-group-item list-group-item-action"href="#PEPITOS">PEPITOS</a>
+        <a class="list-group-item list-group-item-action"href="#COSTILLAS">COSTILLAS</a>
+        <a class="list-group-item list-group-item-action"href="#TEQUEÑOS">TEQUEÑOS</a>
+        <a class="list-group-item list-group-item-action"href="#EXTRAS">Extra</a>
+        <button (click)="dimmer()"class="btn btn-primary position-relative"type="button" >Menos</button>
+      </div>
+      
+    </li>
+    
+  }@else {
+    
+    <button (click)="dimmer()"class="btn btn-primary position-relative"type="button" >Menos</button>
+  } -->
+  <!-- <li class="nav-item">
+  <button type="button" class="btn btn-primary position-relative"type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+      Carrito
+      @if (cuentaState) {
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{cuentaState}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+        }
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/carro']" routerLinkActive="active">Carrito</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pricing']" routerLinkActive="active">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
-      </li>
-    </ul>
-  </div>
+</li>  -->
+    
+  </ul>
 </nav>
+

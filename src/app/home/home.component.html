@@ -1,5 +1,47 @@
-<app-navbar/>
-<!-- cada  app-cards con el numero de la posicion de array es una categoria -->
-<app-cards [dataCards]="dataMenu[0]"/>
-<app-cards [dataCards]="dataMenu[1]"/>
-<app-cards [dataCards]="dataMenu[5]"/>
+<app-navbar />
+<!-- 
+<img class="card-img-top" src="https://elpancito.ar/wp-content/uploads/sites/65/2020/11/Copy-of-IMG_2732-scaled-1-1536x1024.jpg" alt="Card image cap">
+ -->
+
+<div class="start-50">
+  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-0 rounded-0" tabindex="0">
+
+    <img id="Landing" class="card-img-top" src="https://elpancito.ar/wp-content/uploads/sites/65/2020/11/Copy-of-IMG_2732-scaled-1-1536x1024.jpg" alt="Card image cap">   
+
+    <h4 id="SANGUCHES">{{dataMenu[0].iName}}</h4>
+    <app-cards [dataMenu]="dataMenu[0]"/>
+
+    <h4 id="HAMBURGUESAS">{{dataMenu[1].iName}}</h4>
+    <app-cards [dataMenu]="dataMenu[1]"/>
+            <h4 id="FAJITAS">{{dataMenu[2].iName}}</h4>
+            <app-cards [dataMenu]="dataMenu[2]"/>
+            <h4 id="COMPLETOSYHOTDOG">{{dataMenu[3].iName}}</h4>
+            <app-cards [dataMenu]="dataMenu[3]"/>
+            <h4 id="PEPITOS">{{dataMenu[4].iName}}</h4>
+            <app-cards [dataMenu]="dataMenu[4]"/>
+            <h4 id="COSTILLAS">{{dataMenu[5].iName}}</h4>
+            <app-cards [dataMenu]="dataMenu[5]"/>
+            <h4 id="TEQUEÑOS">{{dataMenu[6].iName}}</h4>
+            <app-cards [dataMenu]="dataMenu[6]"/>
+            <h4 id="EXTRAS">{{dataMenu[7].iName}}</h4>
+            <app-cards [dataMenu]="dataMenu[7]"/>
+
+          </div>
+    
+    <app-carrito />
+
+  </div>
+  <div class="position-fixed top-50 end-0 translate-middle-y">
+    <button type="button" class="btn btn-primary btn-lg position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+      Carrito
+      @if (cuentaState) {
+        <span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">
+          {{cuentaState}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      }
+    </button>
+  </div>
+  
+
+  

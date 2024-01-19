@@ -1,0 +1,9 @@
+.background {
+    /* background-image: url(''); Reemplaza 'ruta/de/tu/imagen.jpg' con la ruta correcta de tu imagen */
+    /* background-size: cover; Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    /* background-position: center; Centra la imagen en el elemento */
+    /* background-repeat: no-repeat; Evita la repetición de la imagen */
+    background-color: black; /* Color de fondo negro detrás de la imagen */
+    /* color: white; Color del texto sobre el fondo negro */
+  }
+  

@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CarritoService } from '../carrito.service';
 import { CarritoComponent } from '../carrito/carrito.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css'], 
-  imports:[NavbarComponent],
+  imports:[NavbarComponent,CarritoComponent,RouterLink,CarritoComponent],
   standalone: true,
 })
 export class DetailComponent implements OnInit {
   public name: any;
-  public data: any;
+  // public data: any;
+  cuentaState: any = 0;
   contador: number = 1;
   producto: any = {};
+  @Input()
+  data: any = "";
 
   constructor(private route: ActivatedRoute, private carritoService: CarritoService) {}
 
