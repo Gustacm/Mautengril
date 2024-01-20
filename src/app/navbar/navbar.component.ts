@@ -25,6 +25,9 @@ export class NavbarComponent {
   }
 
 
+logo: string = 'assets/logo1.png';
+
+
 constructor(private carritoService: CarritoService, private cdr: ChangeDetectorRef) {}
 
 ngOnInit(): void {

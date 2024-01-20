@@ -3,12 +3,13 @@ import { CardsComponent } from '../cards/cards.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { CartaService } from '../carta.service';
+import { LandingComponent } from '../landing/landing.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardsComponent, NavbarComponent, CarritoComponent,],
+  imports: [CardsComponent, NavbarComponent, CarritoComponent,LandingComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -25,18 +26,11 @@ export class HomeComponent implements OnInit {
       // Procesa los datos según tus necesidades
       this.dataMenu = this.menuCategory(estado);
     });
-   
-    
   }
-
   dimmer() {
     this.posicion = !this.posicion;
   }
-
   title = 'MauntenGril';
-
-
-
 
   // Obtener la data del menú al inicio
   private menuCategory(menudata: any[]): any[] {

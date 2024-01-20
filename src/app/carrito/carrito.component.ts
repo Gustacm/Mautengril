@@ -103,7 +103,6 @@ export class CarritoComponent implements OnInit {
     this.carritoService.getState().subscribe((carrito) => {
       // console.log('Carrito recibido en CarritoComponent:', carrito);
       this.carrito = carrito;
-
       // Forzar la detección de cambios
       this.cdr.detectChanges();
     });

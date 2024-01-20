@@ -1,22 +1,135 @@
 
-<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 bg-opacity-75 fixed-top">
-  <a class="navbar-brand" [routerLink]="['/']">El logo De vaina</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link text-warning" href="#Landing">Landing</a>
-    </li>
+<nav class="navbar bg-body-tertiary fixed-top bg-opacity-50">
+  <div class="container-fluid">
+    <a class="navbar-brand bg-opacity-75  " [routerLink]="['/']">
+      <img [src]="logo" alt="Bootstrap" width="60" height="60">
+    </a>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="button" class="bi bi-cart4 btn btn-lg bg-transparent border border-0 me-md-8 text-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
 
-    <li class="nav-item">
-      <a class="nav-link text-warning" href="#SANGUCHES">SANGUCHES</a>
-    </li>
-    <li class="nav-item text-warning">
-      <a class="nav-link text-warning" href="#HAMBURGUESAS">HAMBURGUESAS</a>
-    </li>
-    <li class="nav-item text-warning">
-      <a class="nav-link text-warning" href="#FAJITAS">FAJITAS</a>
-    </li>
+      @if (cuentaState) {
+        <span class="badge rounded-pill bg-danger position-relative translate-middle ms-1" style="font-size: 0.8rem;">
+          {{cuentaState}}
+          <span class="visually-hidden">unread messages</span>
+        </span>        
+      }
+    </button>
+  </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="button" class="bi bi-cart4 btn btn-lg bg-transparent border border-0 me-md-8 text-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+
+      @if (cuentaState) {
+        <span class="badge rounded-pill bg-danger position-relative translate-middle ms-1" style="font-size: 0.8rem;">
+          {{cuentaState}}
+          <span class="visually-hidden">unread messages</span>
+        </span>        
+      }
+    </button>
+  </div>
+</div>
 
 
+
+
+    <button class="navbar-toggler text-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+     
+     
+      <span class="navbar-toggler-icon text-warning"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel text-warning">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class=" nav-link btn-dark text-warning"  href="#Landing">   
+              LANDING
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-dark  text-warning  " href="#SANGUCHES">SANGUCHES</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="nav-link btn-dark text-warning" href="#HAMBURGUESAS">HAMBURGUESAS</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="nav-link btn-dark text-warning" href="#FAJITAS">FAJITAS</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="dropdown-item text-warning" href="#COMPLETOSYHOTDOG">COMPLETOS Y HOT DOG</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="dropdown-item text-warning" href="#PEPITOS">PEPITOS</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="dropdown-item text-warning" href="#COSTILLAS">COSTILLAS</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="dropdown-item text-warning" href="#TEQUEÑOS">TEQUEÑOS</a>
+          </li>
+          <li class="nav-item text-warning">
+            <a class="dropdown-item text-warning" href="#EXTRAS">Extra</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-0 mb-0 bg-opacity-75  fixed-top"> -->
+  <!-- <a class="navbar-brand position-absolute start-0" [routerLink]="['/']"> <img [src]="logo" alt="logo" class="img-fluid w-50  opacity-75"></a>
+   -->
+   <!-- <div class="container">
+     <a class="navbar-brand bg-opacity-75  " [routerLink]="['/']">
+      <img [src]="logo" alt="Bootstrap" width="70" height="70">
+    </a>
+  </div>
+   <ul class="justify-content-end">  
+       <li class="nav-item ">
+        
+        <a class=" nav-link btn-dark text-warning"  href="#Landing">   
+          LANDING
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn-dark  text-warning  " href="#SANGUCHES">SANGUCHES</a>
+      </li>
+      <li class="nav-item text-warning">
+        <a class="nav-link btn-dark text-warning" href="#HAMBURGUESAS">HAMBURGUESAS</a>
+      </li>
+      <li class="nav-item text-warning">
+        <a class="nav-link btn-dark text-warning" href="#FAJITAS">FAJITAS</a>
+      </li>
 
     <li class="nav-item dropdown text-warning">
     <a class="nav-link dropdown-toggle text-warning" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorías</a>
@@ -28,42 +141,7 @@
          <li><a class="dropdown-item text-warning" href="#TEQUEÑOS">TEQUEÑOS</a></li>
          <li><a class="dropdown-item text-warning" href="#EXTRAS">Extra</a></li>
       </ul>
-   </li>
-    
-
-
-
-
-
-    <!-- @if (posicion==true) {
-      <li class="nav-item dropdown">
-        <div class="list-group">
-        <a class="list-group-item list-group-item-action"href="#COMPLETOS Y HOT DOG">COMPLETOS Y HOT DOG</a>
-        <a class="list-group-item list-group-item-action"href="#PEPITOS">PEPITOS</a>
-        <a class="list-group-item list-group-item-action"href="#COSTILLAS">COSTILLAS</a>
-        <a class="list-group-item list-group-item-action"href="#TEQUEÑOS">TEQUEÑOS</a>
-        <a class="list-group-item list-group-item-action"href="#EXTRAS">Extra</a>
-        <button (click)="dimmer()"class="btn btn-primary position-relative"type="button" >Menos</button>
-      </div>
-      
-    </li>
-    
-  }@else {
-    
-    <button (click)="dimmer()"class="btn btn-primary position-relative"type="button" >Menos</button>
-  } -->
-  <!-- <li class="nav-item">
-  <button type="button" class="btn btn-primary position-relative"type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-      Carrito
-      @if (cuentaState) {
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {{cuentaState}}
-          <span class="visually-hidden">unread messages</span>
-        </span>
-        }
-  </button>
-</li>  -->
-    
+    </li>    
   </ul>
 </nav>
-
+ -->
