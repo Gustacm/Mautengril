@@ -1,12 +1,18 @@
 
 <nav class="navbar bg-body-tertiary fixed-top bg-opacity-50">
-  <div class="container-fluid">
-    <a class="navbar-brand bg-opacity-75  " [routerLink]="['/']">
+  <div class="container-fluid  d-flex  h-100 w-100 " >
+    <a class="navbar-brand bg-opacity-75  position-absolute top-50 start-50 translate-middle  " [routerLink]="['/']">
       <img [src]="logo" alt="Bootstrap" width="60" height="60">
     </a>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="bi bi-cart4 btn btn-lg bg-transparent border border-0 me-md-8 text-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    
+    <div class="d-grid gap-2 d-md-flex w-75 h-100 justify-content-md-end ">
+      
+      <a class=" bi bi-house-fill bg-opacity-75 text-light  position-absolute fw-bold top-50 start-100 fs-3 w-50 translate-middle  " [routerLink]="['/']">
+      </a>
+
+
+    <!-- <div class="d-grid gap-2 d-md-flex   mh-100 "> -->
+      <button type="button" class="bi bi-cart4 fs-3 btn btn-lg bg-transparent fw-bold me-md-8 text-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
 
       @if (cuentaState) {
         <span class="badge rounded-pill bg-danger position-relative translate-middle ms-1" style="font-size: 0.8rem;">
@@ -16,29 +22,17 @@
       }
     </button>
   </div>
-
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="bi bi-cart4 btn btn-lg bg-transparent border border-0 me-md-8 text-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-
-      @if (cuentaState) {
-        <span class="badge rounded-pill bg-danger position-relative translate-middle ms-1" style="font-size: 0.8rem;">
-          {{cuentaState}}
-          <span class="visually-hidden">unread messages</span>
-        </span>        
-      }
-    </button>
-  </div>
-</div>
+<!-- </div> -->
 
 
 
 
-    <button class="navbar-toggler text-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+    <button class="navbar-toggler text-warning  position-absolute top-1000  text-light " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
      
      
-      <span class="navbar-toggler-icon text-warning"></span>
+      <span class="navbar-toggler-icon text-light"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end" tabindex="1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel text-warning">Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
