@@ -4,12 +4,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { CartaService } from '../carta.service';
 import { LandingComponent } from '../landing/landing.component';
+import { PieComponent } from '../pie/pie.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardsComponent, NavbarComponent, CarritoComponent,LandingComponent],
+  imports: [CardsComponent, NavbarComponent, CarritoComponent,LandingComponent,PieComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
