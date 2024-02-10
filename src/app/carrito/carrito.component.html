@@ -21,6 +21,9 @@
 
           <li>{{ carrito[$index].Cantidad}} {{ carrito[$index].Titulo}} -
              Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>      
+             <button (click)="eliminarItem([$index])">Eliminar</button>
+
+
         }
           <h3>Total: {{ formatearComoDinero(total()) }}</h3>
           <div class="mb-3">
@@ -108,7 +111,8 @@
   @for (i of carrito; track $index) {
     
     <li>{{ carrito[$index].Cantidad}} {{ carrito[$index].Titulo}} -
-      Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>      
+      Precio:{{formatearComoDinero(carrito[$index].precio)}} </li>   
+      <button (click)="eliminarItem([$index])">Eliminar</button>   
     }
   
     

@@ -1,0 +1,4 @@
+.invert-bw {
+    filter: invert(100%) grayscale(100%);
+  }
+  

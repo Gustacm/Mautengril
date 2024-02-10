@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './pie.component.css'
 })
 export class PieComponent {
-
+  logo: string = 'assets/mauten.png';
 }

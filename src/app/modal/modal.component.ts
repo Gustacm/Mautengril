@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { CommonModule } from '@angular/common';
+import { CarritoService } from '../carrito.service';
 
 @Component({
   selector: 'app-modal',
@@ -15,6 +16,13 @@ export class ModalComponent {
     console.log("off");
     
   }
+  
+  constructor(private carritoService: CarritoService, private cdr: ChangeDetectorRef) {}
+  ngOnInit(): void {
+  }
 
+  eliminarItem(index: any) {    
+    this.carritoService.deleteI(index);
+  }
 
 }

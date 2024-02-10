@@ -28,6 +28,16 @@ export class CarritoService {
     // Actualiza el estado del carrito
     this.carritoState.next([...carritoActual]);
   }
+  deleteI(index: number) {
+    const carritoActual = this.carritoState.value;
+
+    if (index >= 0 && index < carritoActual.length) {
+      carritoActual.splice(index, 1);
+  
+      this.carritoState.next([...carritoActual]);
+    }
+  }
+  
   
 }
 

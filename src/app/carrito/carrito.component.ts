@@ -107,4 +107,8 @@ export class CarritoComponent implements OnInit {
       this.cdr.detectChanges();
     });
   }
+  eliminarItem(index: any) {    
+    this.carritoService.deleteI(index);
+  }
+
 }
