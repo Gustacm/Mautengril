@@ -4,13 +4,15 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { CarritoService } from '../carrito.service';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { RouterLink } from '@angular/router';
+import { PieComponent } from '../pie/pie.component';
+
 
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css'], 
-  imports:[NavbarComponent,CarritoComponent,RouterLink,CarritoComponent],
+  imports:[NavbarComponent,CarritoComponent,RouterLink,CarritoComponent,PieComponent],
   standalone: true,
 })
 export class DetailComponent implements OnInit {
