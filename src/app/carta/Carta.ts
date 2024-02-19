@@ -4,20 +4,20 @@
       category: "SANGUCHES",
       items: [
         { name: "Gustavo", price: 4990, ingredients: ["CARNE", "PALTA", "TOMATE", "MAYO"] , imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
-        { name: "CHACARERO", price: 4500, ingredients: ["CARNE", "POROTO VERDE", "TOMATE", "AJI VERDE", "MAYO"], imagen:[""] },
-        { name: "BARROS LUCO", price: 4800, ingredients: ["CARNE", "QUESO", "MAYO"], imagen:[""] },
-        { name: "MEDITERRANEO", price: 5900, ingredients: ["CARNE", "QUESO", "MORRON", "TOMATE", "ACEITUNAS", "MAYO"], imagen:[""] }
+        { name: "CHACARERO", price: 4500, ingredients: ["CARNE", "POROTO VERDE", "TOMATE", "AJI VERDE", "MAYO"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "BARROS LUCO", price: 4800, ingredients: ["CARNE", "QUESO", "MAYO"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "MEDITERRANEO", price: 5900, ingredients: ["CARNE", "QUESO", "MORRON", "TOMATE", "ACEITUNAS", "MAYO"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] }
       ]
     },
     {
       category: "HAMBURGUESAS",
       items: [
-        { name: "BURGUER CROQUETA", price: 5990, ingredients: ["180G DE VACUNO", "QUESO", "TOCINETA", "LECHUGA", "TOMATE", "CEBOLLA", "PEPINILLO", "SALSA DE LA CASA"], imagen:[""] },
-        { name: "BURGUER MILANESA", price: 5990, ingredients: ["170G DE AVE", "QUESO", "TOCINETA", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:[""] },
-        { name: "BURGUER MIXTA", price: 7500, ingredients: ["180G DE VACUNO", "170G DE MILANESA", "DOBLE DE QUESO", "PANCETA", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:[""] },
-        { name: "BURGUER TRIPLE", price: 8990, ingredients: ["VACUNO", "AVE", "CHULETA DE CERDO", "TRIPLE DE QUESO", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:[""] },
-        { name: "BURGUER PIZZA", price: 6990, ingredients: ["CARNE", "QUESO FUNDIDO", "SALSA NAPOLITANA", "QUESO", "PEPERONI"], imagen:[""] },
-        { name: "BURGUER ALEMANA", price: 6200, ingredients: ["CHORIZO", "QUESO", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:[""] }
+        { name: "BURGUER CROQUETA", price: 5990, ingredients: ["180G DE VACUNO", "QUESO", "TOCINETA", "LECHUGA", "TOMATE", "CEBOLLA", "PEPINILLO", "SALSA DE LA CASA"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "BURGUER MILANESA", price: 5990, ingredients: ["170G DE AVE", "QUESO", "TOCINETA", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "BURGUER MIXTA", price: 7500, ingredients: ["180G DE VACUNO", "170G DE MILANESA", "DOBLE DE QUESO", "PANCETA", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "BURGUER TRIPLE", price: 8990, ingredients: ["VACUNO", "AVE", "CHULETA DE CERDO", "TRIPLE DE QUESO", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "BURGUER PIZZA", price: 6990, ingredients: ["CARNE", "QUESO FUNDIDO", "SALSA NAPOLITANA", "QUESO", "PEPERONI"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "BURGUER ALEMANA", price: 6200, ingredients: ["CHORIZO", "QUESO", "LECHUGA", "TOMATE", "CEBOLLA", "SALSA DE LA CASA"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] }
       ]
     },
     {
