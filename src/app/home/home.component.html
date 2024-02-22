@@ -1,10 +1,20 @@
-<app-navbar />
+<!-- <app-navbar /> -->
+
+  <div>
+      <app-landing id="Landing"></app-landing>
+  </div>
+  <div class="d-flex justify-content-center align-items-center" style="height: 30vh;">
+    <div class="text-center py-4">
+        <button type="button" class="btn btn-secondary btn-lg btn-block mx-4">Delivery</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Local</button>
+    </div>
+</div>
+
 
 
 <div class="start-50">
   <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-0 rounded-0" tabindex="0">
-<app-landing  id="Landing"/>
-    <h4 id="SANGUCHES" class="text-center p-3">{{dataMenu[0].iName}}</h4>
+    <!-- <h4 id="SANGUCHES" class="text-center p-3">{{dataMenu[0].iName}}</h4>
     <app-cards [dataMenu]="dataMenu[0]"/>
 
     <h4 id="HAMBURGUESAS" class="text-center p-3">{{dataMenu[1].iName}}</h4>
@@ -26,8 +36,13 @@
     
     <app-carrito />
 
-  </div>
-  <app-pie/>
+  </div> -->
+
+  <footer class="footer fixed-bottom bg-light">
+    <div class=" text-center">
+        <app-pie></app-pie>
+    </div>
+</footer>
 
   
 

@@ -3,7 +3,7 @@
     {
       category: "SANGUCHES",
       items: [
-        { name: "Gustavo", price: 4990, ingredients: ["CARNE", "PALTA", "TOMATE", "MAYO"] , imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
+        { name: "huevo", price: 4990, ingredients: ["CARNE", "PALTA", "TOMATE", "MAYO"] , imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
         { name: "CHACARERO", price: 4500, ingredients: ["CARNE", "POROTO VERDE", "TOMATE", "AJI VERDE", "MAYO"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
         { name: "BARROS LUCO", price: 4800, ingredients: ["CARNE", "QUESO", "MAYO"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] },
         { name: "MEDITERRANEO", price: 5900, ingredients: ["CARNE", "QUESO", "MORRON", "TOMATE", "ACEITUNAS", "MAYO"], imagen:["https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Submarino-S%C3%A1ndwich.jpg"] }

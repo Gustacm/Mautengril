@@ -85,7 +85,7 @@ export class CarritoComponent implements OnInit {
     const productos = this.carrito.map(item => `- ${item.Titulo} Cantidad: ${item.Cantidad}`).join('\n');
 
   const mensaje = `Hola, soy ${this.nombrecliente}.\n Mi pedido es:\n${productos}\n Total :${this.totalp}\nmi dirección es: \n  ${this.direccion} `;
-    const numeroWhatsApp = "+56 El  numero";
+    const numeroWhatsApp = "+56988473404";
     const enlaceWhatsApp = `https://web.whatsapp.com/send?phone=${encodeURIComponent(numeroWhatsApp)}&text=${encodeURIComponent(mensaje)}`;
     window.open(enlaceWhatsApp, '_blank');
 
