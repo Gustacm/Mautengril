@@ -1,21 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CartaService } from '../carta.service';
+import { CardsComponent } from '../cards/cards.component';
+import e from 'express';
  
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
-  styleUrls: ['./delivery.component.css']
+  styleUrls: ['./delivery.component.css'],
+  imports: [CardsComponent],
+  standalone: true
+
 })
 export class DeliveryComponent implements OnInit {
+  dataMenu: any[] = [];
+  @Input() item: any;
 
  
-  constructor() { }
+  constructor(private cartaService: CartaService) {}
  
   ngOnInit() {
-    this.getUserLocation();
+    //  funcuin de localizacion 
+        this.getUserLocation();
+
+           // Suscríbete al estado de la carta cuando el componente se inicia
+           this.cartaService.getState().subscribe((estado) => {
+            this.dataMenu = this.menuCategory(estado);
+          });
+        }
+
+
+        // Obtener la data del menú al inicio
+  private menuCategory(menudata: any[]): any[] {
+    return menudata.map((category) => {
+      return {
+        iName: category.category,
+        iItems: category.items,
+      };
+    });
   }
+   
   
-  
-//funcion pra obtener la ubicacion del usuario
+//Ubicacion del usuario y distancia a la tienda
 getUserLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -54,7 +79,7 @@ getUserLocation() {
   deg2rad(deg:any) {
     return deg * (Math.PI/180)
   }
-
+// calcula  el  costo del delivery
   isNear(latitude:any, longitude:any, latitudeTienda:any, longitudeTienda:any) {
     const distance = this.getDistanceFromLatLonInKm(latitude, longitude, latitudeTienda, longitudeTienda);
     
@@ -70,6 +95,18 @@ getUserLocation() {
   
   }
 
+  // funcion que  calcule que  hora es 
+  getHour() {
+    const date = new Date();
+    const hour = date.getHours();
+    if(hour >= 0 && hour < 12){
+      return "días";
+    } else if(hour >= 12 && hour < 19){
+      return "tardes";
+    }else{
+      return "Cerrado";
+    }
+  }
 
 
 

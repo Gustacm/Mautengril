@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // Suscríbete al estado de la carta cuando el componente se inicia
     this.cartaService.getState().subscribe((estado) => {
-      // Procesa los datos según tus necesidades
       this.dataMenu = this.menuCategory(estado);
     });
   }

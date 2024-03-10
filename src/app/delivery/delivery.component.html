@@ -1,8 +1,58 @@
 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Delivery</h1>
+        </div>
+    </div>
+@if(getHour()== "días"){
+<h1>Los Mejores Desayunos 🌞</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <h2 class="text-center"> {{dataMenu[0].iName}}</h2>
+        <app-cards [dataMenu]="dataMenu[0].iItems"/>
+                 
+    </div>
+  </div>
+</div>
 
 
 
 
+
+
+
+    }
+  @if(getHour()=="tardes"){
+    <h1>TARDES DE  TARDES En MAUTEN </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          @for (item of dataMenu; track $index) {
+            @if(item.iName !== "Churrasca"){
+              <h2 class="text-center"> {{item.iName}}</h2>
+              <app-cards [dataMenu]="item.iItems"/>
+            }
+                     }
+        </div>
+      </div>
+    </div>
+  }
+  @if(getHour()=="Cerrado"){
+
+    <h1>Esta  Cerrado  </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          @for (item of dataMenu; track $index) {
+            <h2 class="text-center"> {{item.iName}}</h2>
+            <app-cards [dataMenu]="item.iItems"/>
+                     }
+        </div>
+      </div>
+    </div>
+  }
 
 
 
