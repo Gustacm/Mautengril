@@ -48,7 +48,7 @@ getUserLocation() {
       const longitude = position.coords.longitude;
       const latitudeTienda = -35.42863;
       const longitudeTienda = -71.65627;
-      //-35.42864700747926, -71.65633881415503
+
 
       //saber a cuantos esta el usuario de la tienda
       const distance = this.getDistanceFromLatLonInKm(latitude, longitude, latitudeTienda, longitudeTienda);
